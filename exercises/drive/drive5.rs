@@ -5,7 +5,6 @@
 // You should not modify any existing code. All you need to do is add two line of attributes.
 
 
-// I AM NOT DONE
 
 
 extern {
@@ -17,7 +16,7 @@ extern {
 
 
 mod Foo{
-    fn my_demo_function(a:u32) -> u32 {a}
+    pub fn my_demo_function(a:u32) -> u32 {a}
 }
 
 
@@ -25,6 +24,8 @@ mod Foo{
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::Foo::my_demo_function;
+    use crate::Foo::my_demo_function as my_demo_function_alias;
 
     #[test]
     fn test_success() {
